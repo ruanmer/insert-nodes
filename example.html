@@ -1,0 +1,93 @@
+<script src="jquery.js"></script>
+<script src="insert-nodes.js"></script>
+
+<script>
+    $(function(){
+        var nodes = [
+            {
+                element: 'div', 
+                html: [
+                    {
+                        element: 'span',
+                        attr: {
+                            text: 'this is a span!'
+                        }
+                    }
+                ]
+            },
+            {
+                element: 'form',
+                html: [
+                    {
+                        element: 'label',
+                        attr: {
+                            'for': 'foo',
+                            text: 'Label Foo'
+                        },
+                    },
+                    {
+                        element: 'input',
+                        attr: {
+                            type: 'text',
+                            name: 'foo',
+                            id: 'foo',
+                            placeholder: 'foo',
+                            val: 'value'
+                        }
+                    },
+                    {
+                        element: 'select',
+                        attr: {
+                            name: 'select',
+                            value: '3'
+                        },
+                        html: [
+                            {
+                                element: 'option',
+                                attr: {
+                                    value: '1',
+                                    text: 'Test 1'
+                                }
+                            },
+                            {
+                                element: 'option',
+                                attr: {
+                                    value: '2',
+                                    text: 'Test 2'
+                                }
+                            },
+                            {
+                                element: 'option',
+                                attr: {
+                                    value: '3',
+                                    text: 'Test 3',
+                                    selected: 'selected'
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        element: 'input',
+                        attr: {
+                            type: 'submit',
+                            value: 'Send'
+                        }
+                    },
+                    {
+                        element: 'button',
+                        attr: {
+                            text: 'Call Alert',
+                            click: function () {
+                                alert('alert');
+                            }
+                        },
+                    },
+                ]
+            }
+        ];
+        
+        $('body').insertNodes(nodes);
+    });
+</script>
+
+<body></body>
